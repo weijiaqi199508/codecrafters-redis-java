@@ -18,7 +18,7 @@ public class Main {
             int read = in.read(bytes);
             System.out.println("接收到的消息" + new String(bytes, 0, read));
             OutputStream outputStream = clientSocket.getOutputStream();
-            outputStream.write("PONG".getBytes());
+            outputStream.write("+PONG\r\n".getBytes());
         } catch (IOException e) {
             System.out.println("IOException: " + e.getMessage());
         } finally {
